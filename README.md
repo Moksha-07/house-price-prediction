@@ -5,6 +5,7 @@ This repository contains a machine learning model to predict house prices based 
 Dataset Description 📊
 
 The dataset includes the following features for each property:
+
 Property_Name    
 Location         
 Region           
