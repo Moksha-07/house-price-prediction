@@ -1,4 +1,5 @@
 House Price Prediction 🏠
+
 This repository contains a machine learning model to predict house prices based on location, number of bedrooms, and area (in sq.ft). It includes a Flask web app for user interaction and predictions.
 
 Dataset Description 📊
