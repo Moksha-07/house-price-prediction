@@ -57,6 +57,7 @@ Open your browser
 Go to http://localhost:5000 and enter house details to get predictions.
 
 Output Example 🧮
+
 Input:
 
 Location: ECR
