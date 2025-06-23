@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>House Price Prediction</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url(https://nycdsa-blog-files.s3.us-east-2.amazonaws.com/2021/03/chaitali-majumder/house-price-497112-KhCJQICS.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: right;
+            align-items: right;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 30px 40px;
+            border-radius: 12px;
+            width: 650px;
+            color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #ff4d4d;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .form-column {
+            width: 48%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #f0f0f0;
+        }
+
+        input[type="text"] {
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: none;
+            background-color: #eee;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 0 auto;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+
+                
+            }
+
+            .form-column {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>House Price Prediction</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <div class="form-column">
+                <label>Property_Name</label>
+                <input type="text" name="Property_Name" placeholder="Property_Name" required />
+            
+                 <label>Location:</label>
+                 <select name="Location" required>
+                    <option value="1">ECR</option>
+                    <option value="2">Tambaram</option>
+                    <option value="3">OMR</option>
+                    <option value="4">Medavakkam</option>
+                    <option value="5">Sholinganallur</option>
+                </select>
+
+                <label>Region</label>
+                <select name="Region" required>
+                    <option value="1">North</option>
+                    <option value="2">South</option>
+                    <option value="3">East</option>
+                    <option value="4">West</option>
+                </select>
+
+                <label>Property_Age</label>
+                <input type="text" name="Property_Age" placeholder="Property_Age" required required min="0" max="20" />
+
+               <label>Availability:</label>
+                 <select name="Availability" required>
+                    <option value="1">Available</option>
+                    <option value="2">Occupied</option>
+                    <option value="3">Ready to shift</option>
+                    <option value="4">Coming Soon</option>
+                 </select>
+
+                <label>Area_Type </label>
+                <select name="Area_Type" required>
+                    <option value="1">Commercial</option>
+                    <option value="2">Industrial</option>
+                    <option value="3">Residential</option>
+                    <option value="4">Agricultural</option>
+                 </select>
+                
+                
+                <label>Area(SqFt)</label>
+                <input type="text" name="Area(SqFt)"placeholder="Area(SqFt)" required />
+            </div>
+
+            <div class="form-column">
+                <label>Rate_Per_SqFt</label>
+                <input type="text" name="Rate_Per_SqFt"placeholder="Rate_Per_SqFt" required />
+                
+                <label>Floor</label>
+                <input type="number" name="Floor" id="Floor" placeholder="Floor" required min="0" max="50" />
+
+                <label>Bedroom</label>
+                <input type="text" name="Bedroom"placeholder="Bedroom"required min="0" max="3" />
+                
+                <label>Bathroom</label>
+                <input type="text" name="Bathroom" placeholder="Bathroom" required required min="1" max="3"/>
+                
+                <button type="submit">Submit Property</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
