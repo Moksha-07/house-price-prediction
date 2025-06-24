@@ -34,6 +34,7 @@ Datasets used:
 
 •	Mumbai_Property.csv
 
+
 Project Structure 📁
 
 	app.py: Flask web application for prediction
@@ -52,6 +53,7 @@ Project Structure 📁
 
 	dataset : Contains the CSV files used for training
 
+
 Getting Started 🚀
 
 •	Clone the repository git clone https://github.com/Moksha-07/house-price-prediction.git cd house-price-prediction
@@ -61,6 +63,7 @@ Getting Started 🚀
 •	Run the web app python app.py
 
 •	Open your browser Go to http://localhost:5000 and enter house details to get predictions.
+
 
 Output Example 🧮
 
